@@ -1,0 +1,14 @@
+{% extends 'main\base.html' %}
+
+{% block content %}
+<h1> Welcome to blog Application </h1>
+<h5>top 10 articles</h5>
+<ul>
+    {% for articles in latest_articles %}
+    <!-- will print the name of articles in <li> since we used the def __str__ func -->
+    <li>
+        <a href="{% url 'get_article' articles.id %}">{{ articles }}</a>    
+    </li> 
+    {% endfor %}
+</ul>
+{% endblock %}
